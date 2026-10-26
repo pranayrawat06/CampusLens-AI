@@ -125,7 +125,7 @@ if analyze_clicked:
             try:
                 api_key = st.secrets["GEMINI_API_KEY"]
             except Exception:
-                api_key = Nonegit status
+                api_key = None
 
         if not api_key:
             st.error(
