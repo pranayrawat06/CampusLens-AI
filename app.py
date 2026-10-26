@@ -122,6 +122,12 @@ if analyze_clicked:
         api_key = os.getenv("GEMINI_API_KEY")
 
         if not api_key:
+            try:
+                api_key = st.secrets["GEMINI_API_KEY"]
+            except Exception:
+                api_key = Nonegit status
+
+        if not api_key:
             st.error(
                 "API key not found. Check that your .env file "
                 "is inside the CampusLens-AI folder."
